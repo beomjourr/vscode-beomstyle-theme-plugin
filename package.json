@@ -1,0 +1,66 @@
+{
+  "name": "beomstyle-theme",
+  "displayName": "BeomStyle Theme",
+  "description": "Auto-switching premium theme for different times of day",
+  "version": "0.0.1",
+  "publisher": "beomstyle",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:beomstyle-theme.toggleAutoSwitch"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "themes": [
+      {
+        "label": "BeomStyle Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/beomstyle-night-theme.json"
+      },
+      {
+        "label": "BeomStyle Morning",
+        "uiTheme": "vs-dark",
+        "path": "./themes/beomstyle-morning-theme.json"
+      },
+      {
+        "label": "BeomStyle Day",
+        "uiTheme": "vs-dark",
+        "path": "./themes/beomstyle-day-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "beomstyle-theme.toggleAutoSwitch",
+        "title": "BeomStyle: Toggle Auto Theme Switch"
+      }
+    ],
+    "configuration": {
+      "title": "BeomStyle Theme",
+      "properties": {
+        "beomstyle-theme.autoSwitch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically switch theme based on time of day"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "~16.18.68",
+    "@types/sinon": "^17.0.3",
+    "@types/vscode": "~1.81.0",
+    "typescript": "~4.9.5"
+  }
+}
