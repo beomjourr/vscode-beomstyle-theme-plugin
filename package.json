@@ -48,7 +48,11 @@
           "description": "Automatically switch theme based on time of day"
         }
       }
-    }
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/beomjourr/vscode-beomstyle-theme-plugin.git"
+  }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
